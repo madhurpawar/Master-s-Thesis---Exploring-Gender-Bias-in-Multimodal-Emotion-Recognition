@@ -1,4 +1,4 @@
-# Master-s-Thesis---Exploring-Gender-Bias-in-Multimodal-Emotion-Recognition
+# Master's Thesis: Exploring Gender Bias in Multimodal Emotion Recognition - The Impact of Training Data Representation and Fusion Techniques
 This repository contains the code and resources for the thesis on multimodal emotion recognition systems and the analysis of gender bias within these models. The project focuses on evaluating various fusion techniques, datasets, and fairness metrics to understand how gender bias manifests and impacts model performance in emotion recognition systems.
 
 ## Repository Structure
