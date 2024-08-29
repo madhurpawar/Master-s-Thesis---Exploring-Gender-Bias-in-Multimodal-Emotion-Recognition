@@ -8,6 +8,53 @@ This repository contains the code and resources for the thesis on multimodal emo
 - **`/scripts`**: Utility scripts for label extraction, and visualizing results.
 - **`/results`**: Contains plots based on the experimentation
 
+## Project Overview
+
+This project explores gender bias in multimodal emotion recognition systems, specifically focusing on how different fusion techniques (early, intermediate, and late fusion) contribute to bias. The research investigates the impact of gender representation in training datasets on the observed biases and evaluates various fairness metrics to quantify these biases.
+
+## Objectives
+
+- To determine the extent to which gender representation in training datasets influences gender bias in emotion recognition systems.
+- To assess how different fusion techniques affect the level of gender bias in these systems.
+- To evaluate the effectiveness of various fairness metrics in reporting gender bias.
+
+## Datasets Used
+
+- **RAVDESS**: A gender-balanced dataset with facial and vocal expressions, used to explore how emotions like calm, happy, sad, etc., are recognized.
+- **CREMA-D**: A diverse dataset in terms of age, ethnicity, and emotion levels, providing a more realistic context for testing the robustness of emotion recognition systems.
+
+## Architecture and Techniques
+
+- **Audio and Video Models**: Individual models were trained on audio and video data separately using architectures like Long-term Recurrent Convolutional Networks (LRCN) and AlexNet proposed by Abdellatif et al.
+- **Fusion Techniques**: The study employs three fusion techniques:
+  - **Early Fusion**: Early fusion pipeline proposed in this study combines features from multiple modalities at the initial stages of processing.
+
+![Early Fusion Architecture](./architecture/EarlyFusion.png)
+
+  - **Intermediate Fusion**: Intermediate fusion pipeline proposed in this study Integrates partially processed features to create a unified representation.
+
+![Intermediate Fusion Architecture](./architecture/IntermediateFusion.png)
+
+  - **Late Fusion**: Late fusion pipeline inspired by Abdellatif et al. combines the outputs of fully processed unimodal data, followed by classification.
+
+![Late Fusion and Unimodal Architecture](./architecture/LateFusion_and_Unimodal.png)
+
+## Fairness Metrics
+
+- **Demographic Parity**: Ensures that the model's predictions are independent of the sensitive attribute (e.g., gender).
+- **Equalized Odds**: Focuses on ensuring consistent true positive and false positive rates across different demographic groups.
+
+## Results Summary
+
+- The study found that models trained on gender-balanced datasets generally exhibited lower bias.
+- Late fusion models were most effective in minimizing bias, while early fusion showed some unexpected results, sometimes outperforming unimodal models despite the learning process being simpler compared to the unimodal models.
+- The impact of fusion techniques on gender bias was found to be context-dependent, varying across different emotions and datasets.
+
+## Conclusion
+
+The findings underscore the importance of dataset composition and the choice of fusion techniques. This research contributes to the development of more inclusive and fair multimodal systems, with implications for improving the reliability and applicability of these systems in real-world scenarios.
+
+
 ## Acknowledgments
 
 - **DAS-5**: We would like to thank the DAS-5 cluster for providing the necessary computational resources that enabled this research.
